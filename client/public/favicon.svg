@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Transparent background -->
+  
+  <!-- Body/shirt - olive green -->
+  <path d="M12 58 C12 46 20 42 32 42 C44 42 52 46 52 58 L52 64 L12 64 Z" fill="#5a6e3a"/>
+  
+  <!-- Neck -->
+  <rect x="28" y="38" width="8" height="6" rx="2" fill="#d4a574"/>
+  
+  <!-- Head/face -->
+  <ellipse cx="32" cy="28" rx="12" ry="13" fill="#d4a574"/>
+  
+  <!-- Hair - dark brown/black, messy style -->
+  <path d="M18 26 C18 16 24 12 32 12 C40 12 46 16 46 26 C46 22 44 17 40 15 C38 14 36 14 34 15 C32 14 28 13 25 15 C22 17 19 21 18 26 Z" fill="#2a1f1a"/>
+  <!-- Hair sides -->
+  <path d="M18 26 C17 24 18 20 20 17 L20 26 Z" fill="#2a1f1a"/>
+  <path d="M46 26 C47 24 46 20 44 17 L44 26 Z" fill="#2a1f1a"/>
+  <!-- Hair top volume -->
+  <path d="M20 20 C20 13 25 10 32 10 C39 10 44 13 44 20 C44 16 40 12 32 12 C24 12 20 16 20 20 Z" fill="#1a1210"/>
+  
+  <!-- Glasses -->
+  <rect x="21" y="25" width="9" height="7" rx="2" fill="none" stroke="#888" stroke-width="1.5"/>
+  <rect x="34" y="25" width="9" height="7" rx="2" fill="none" stroke="#888" stroke-width="1.5"/>
+  <line x1="30" y1="28" x2="34" y2="28" stroke="#888" stroke-width="1.2"/>
+  <!-- Ear hooks -->
+  <line x1="21" y1="27" x2="19" y2="26" stroke="#888" stroke-width="1"/>
+  <line x1="43" y1="27" x2="45" y2="26" stroke="#888" stroke-width="1"/>
+  
+  <!-- Eyes behind glasses -->
+  <circle cx="25.5" cy="28.5" r="1.5" fill="#1a1210"/>
+  <circle cx="38.5" cy="28.5" r="1.5" fill="#1a1210"/>
+  
+  <!-- Eyebrows -->
+  <path d="M22 24 C23 23 27 23 29 24" stroke="#2a1f1a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <path d="M35 24 C37 23 41 23 42 24" stroke="#2a1f1a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Nose -->
+  <path d="M31 31 C31 33 33 33 33 31" stroke="#c4956a" stroke-width="1" fill="none" stroke-linecap="round"/>
+  
+  <!-- Mouth - slight smile -->
+  <path d="M28 35 C30 37 34 37 36 35" stroke="#b07860" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Beard/stubble shadow -->
+  <path d="M24 34 C24 38 28 41 32 41 C36 41 40 38 40 34" fill="none" stroke="#3a2a20" stroke-width="0.6" opacity="0.3"/>
+</svg>

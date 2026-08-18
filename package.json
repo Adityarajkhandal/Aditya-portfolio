@@ -1,0 +1,14 @@
+{
+  "name": "aditya-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for Aditya Raj Khandal - inspired by gazijarin.com",
+  "scripts": {
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "build": "cd client && npm run build",
+    "install:all": "cd client && npm install && cd ../server && npm install",
+    "start": "cd server && npm start"
+  },
+  "author": "Aditya Raj Khandal",
+  "license": "MIT"
+}
