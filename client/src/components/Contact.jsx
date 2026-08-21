@@ -2,6 +2,16 @@ import { useState } from 'react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import resumeData from '../data/resumeData';
 
+// ─────────────────────────────────────────────────────────────────────────────
+// HOW TO GET YOUR ACCESS KEY (one-time, takes 30 seconds):
+//   1. Go to https://web3forms.com
+//   2. Enter your email: er.adityarajkhandal@gmail.com
+//   3. Click "Create Access Key"
+//   4. Check your email inbox for the access key
+//   5. Paste it below replacing YOUR_ACCESS_KEY_HERE
+// ─────────────────────────────────────────────────────────────────────────────
+const WEB3FORMS_ACCESS_KEY = 'a560a0db-f984-40cf-ae1c-e8ff59d7d7fe';
+
 export default function Contact() {
   const [sectionRef, isVisible] = useScrollReveal();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -18,22 +28,29 @@ export default function Contact() {
     setStatus(null);
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `Portfolio Contact: ${formData.name}`,
+          from_name: formData.name,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
       });
 
       const data = await response.json();
 
       if (data.success) {
-        setStatus({ type: 'success', message: data.message || 'Message sent successfully!' });
+        setStatus({ type: 'success', message: 'Message sent successfully! I\'ll get back to you soon.' });
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setStatus({ type: 'error', message: data.error || 'Something went wrong.' });
+        setStatus({ type: 'error', message: data.message || 'Something went wrong. Please try again.' });
       }
     } catch (err) {
-      setStatus({ type: 'error', message: 'Failed to connect to server. Please try again.' });
+      setStatus({ type: 'error', message: 'Failed to send message. Please try again later.' });
     } finally {
       setSending(false);
       // Clear status after 5 seconds
@@ -58,6 +75,9 @@ export default function Contact() {
         style={{ transitionDelay: '0.2s' }}
         onSubmit={handleSubmit}
       >
+        {/* Honeypot spam protection — hidden from real users */}
+        <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+
         <div className="form-group">
           <label htmlFor="contact-name">Name</label>
           <input
